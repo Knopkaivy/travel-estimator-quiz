@@ -1,0 +1,18 @@
+.FormField {
+  border: 2px solid fuchsia;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.FormField__contentContainer {
+  border: 2px solid orangered;
+  width: 100%;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.FormField__inputContainer {
+  display: flex;
+}

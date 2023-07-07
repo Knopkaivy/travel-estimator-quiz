@@ -1,5 +1,6 @@
 :root {
-  /* vars */
+  --color-font-primary: #0b2a29;
+  --color-bg-primary: #fffcec;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -17,4 +18,6 @@ html {
 body {
   font-family: sans-serif;
   line-height: 1.6;
+  color: var(--color-font-primary);
+  background-color: var(--color-bg-primary);
 }
