@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from './Button';
 import '../styles/RadioGroup.css';
 import Radio from './Radio';
 
-const RadioGroup = ({ input, name, next }) => {
+const RadioGroup = ({ input, name, next, reset }) => {
   const { options } = input;
   const [val, setVal] = useState('');
+  useEffect(() => {
+    if (reset) {
+      setVal('');
+    }
+  }, [reset]);
   const radioSelect = (id) => {
     setVal(id);
   };
@@ -16,6 +21,7 @@ const RadioGroup = ({ input, name, next }) => {
         name={name}
         radioSelect={radioSelect}
         key={option.id}
+        val={val}
       />
     );
   });
