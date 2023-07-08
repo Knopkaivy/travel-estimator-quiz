@@ -1,13 +1,16 @@
 .FormField {
-  border: 2px solid fuchsia;
+  width: 100vw;
+  height: 100vh;
+  /* border: 2px solid fuchsia; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .FormField__contentContainer {
-  border: 2px solid orangered;
+  /* border: 2px solid orangered; */
   width: 100%;
   max-width: 80rem;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,4 +18,10 @@
 }
 .FormField__inputContainer {
   display: flex;
+}
+.FormField h2 {
+  font-weight: 400;
+}
+.FormField p {
+  margin-top: 0;
 }

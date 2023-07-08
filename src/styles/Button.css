@@ -1,9 +1,21 @@
 .Button {
-  background-color: var(--color-bg-button);
+  width: 24rem;
+  height: 4rem;
+  margin: 0 1rem;
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
   border: none;
+  border-radius: 2px;
   outline: none;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.Button:hover {
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+  border: 2px solid var(--color-tertiary);
 }

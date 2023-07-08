@@ -1,7 +1,10 @@
 :root {
-  --color-font-primary: #0b2a29;
-  --color-bg-primary: #fffcec;
-  --color-bg-button: #56d1c2;
+  --color-black: #0b2a29;
+  --color-primary: #fffcec;
+  --color-teal-light: #56d1c2;
+  --color-teal-dark: #37b8aa;
+  --color-secondary: #ff7d00;
+  --color-tertiary: #913212;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -17,8 +20,8 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: sans-serif;
-  line-height: 1.6;
-  color: var(--color-font-primary);
-  background-color: var(--color-bg-primary);
+  font-family: 'Raleway', sans-serif;
+  line-height: 2;
+  color: var(--color-black);
+  background-color: var(--color-primary);
 }

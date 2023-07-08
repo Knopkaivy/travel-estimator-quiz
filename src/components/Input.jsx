@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Input.css';
 import Button from './Button';
 
 const Input = ({ input }) => {
   const { type, min, max, minLength, maxLength } = input;
+  const [val, setVal] = useState('');
   return (
     <div className="Input">
-      Input goes here
-      <Button val="next" />
+      {type === 'submit' ? (
+        <input type={type} value="Go Ahead" className="Button" />
+      ) : (
+        <React.Fragment>
+          <input
+            type={type}
+            min={min}
+            max={max}
+            minLength={minLength}
+            maxLength={maxLength}
+            value={val}
+            onChange={(e) => {
+              setVal(e.target.value);
+            }}
+          />
+          <Button val="next" />
+        </React.Fragment>
+      )}
     </div>
   );
 };

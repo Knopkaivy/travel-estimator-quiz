@@ -1,4 +1,24 @@
 .Input {
-  border: 2px solid plum;
+  /* border: 2px solid plum; */
+  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 24rem;
+  height: 4rem;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border-radius: 2px;
+  border: 2px solid var(--color-secondary);
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin: 0 1rem;
+}
+input:active,
+input:focus {
+  border: 2px solid var(--color-tertiary);
 }
