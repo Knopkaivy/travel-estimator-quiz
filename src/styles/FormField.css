@@ -19,9 +19,3 @@
 .FormField__inputContainer {
   display: flex;
 }
-.FormField h2 {
-  font-weight: 400;
-}
-.FormField p {
-  margin-top: 0;
-}
