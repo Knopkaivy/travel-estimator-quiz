@@ -19,3 +19,6 @@
   color: var(--color-primary);
   border: 2px solid var(--color-tertiary);
 }
+.Button:active {
+  transform: translateY(0.5rem);
+}

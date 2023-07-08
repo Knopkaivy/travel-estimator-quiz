@@ -23,7 +23,7 @@ const FormField = ({ field }) => {
           <h2>{header}</h2>
           {detail && <p>{detail}</p>}
           {input.type === 'radio' ? (
-            <RadioGroup input={input} next={next} />
+            <RadioGroup input={input} name={name} next={next} />
           ) : (
             <Input input={input} next={next} />
           )}

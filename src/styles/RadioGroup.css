@@ -1,5 +1,10 @@
 .RadioGroup {
-  border: 2px solid yellowgreen;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.RadioGroup__optionsContainer {
+  display: flex;
 }

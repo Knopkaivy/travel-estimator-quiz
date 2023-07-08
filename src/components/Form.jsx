@@ -17,6 +17,7 @@ const Form = () => {
   const [reset, setReset] = useState(false);
 
   const mySubmit = (event) => {
+    console.log(event);
     event.preventDefault();
     setReset(true);
     scroller.scrollTo('confirmation', {
