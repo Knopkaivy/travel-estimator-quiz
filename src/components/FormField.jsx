@@ -13,7 +13,7 @@ import Input from './Input';
 import RadioGroup from './RadioGroup';
 import '../styles/FormField.css';
 
-const FormField = ({ field }) => {
+const FormField = ({ field, reset }) => {
   const { name, header, detail, next, input } = field;
 
   return (
@@ -23,9 +23,9 @@ const FormField = ({ field }) => {
           <h2>{header}</h2>
           {detail && <p>{detail}</p>}
           {input.type === 'radio' ? (
-            <RadioGroup input={input} name={name} next={next} />
+            <RadioGroup input={input} name={name} next={next} reset={reset} />
           ) : (
-            <Input input={input} next={next} />
+            <Input input={input} next={next} reset={reset} />
           )}
         </div>
       </div>

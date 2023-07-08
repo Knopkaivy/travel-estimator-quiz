@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/Input.css';
 import Button from './Button';
 
-const Input = ({ input, next }) => {
+const Input = ({ input, next, reset }) => {
   const { type, min, max, minLength, maxLength } = input;
   const [val, setVal] = useState('');
+  useEffect(() => {
+    if (reset) {
+      setVal('');
+    }
+  }, [reset]);
   return (
     <div className="Input">
       {type === 'submit' ? (

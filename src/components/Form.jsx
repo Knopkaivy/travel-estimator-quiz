@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Scroll from 'react-scroll';
 import {
   Link,
@@ -16,8 +16,15 @@ import '../styles/Form.css';
 const Form = () => {
   const [reset, setReset] = useState(false);
 
+  useEffect(() => {
+    if (reset) {
+      setTimeout(() => {
+        setReset(false);
+      }, 1000);
+    }
+  }, [reset]);
+
   const mySubmit = (event) => {
-    console.log(event);
     event.preventDefault();
     setReset(true);
     scroller.scrollTo('confirmation', {
@@ -28,7 +35,7 @@ const Form = () => {
   };
 
   const formFieldsList = formFields.map((field, i) => {
-    return <FormField key={i} field={field} />;
+    return <FormField key={i} field={field} reset={reset} />;
   });
   return (
     <form
