@@ -1,0 +1,13 @@
+.Start {
+  background-color: var(--color-primary);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.Start h1 {
+  font-weight: 400;
+}
