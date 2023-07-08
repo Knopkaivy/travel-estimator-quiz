@@ -1,0 +1,9 @@
+.Button {
+  background-color: var(--color-bg-button);
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: capitalize;
+}

@@ -1,6 +1,7 @@
 :root {
   --color-font-primary: #0b2a29;
   --color-bg-primary: #fffcec;
+  --color-bg-button: #56d1c2;
 }
 ::-webkit-scrollbar {
   display: none;
