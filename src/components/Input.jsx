@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Input.css';
 import Button from './Button';
 
-const Input = ({ input }) => {
+const Input = ({ input, next }) => {
   const { type, min, max, minLength, maxLength } = input;
   const [val, setVal] = useState('');
   return (
@@ -22,7 +22,7 @@ const Input = ({ input }) => {
               setVal(e.target.value);
             }}
           />
-          <Button val="next" />
+          <Button val="next" next={next} />
         </React.Fragment>
       )}
     </div>

@@ -3,6 +3,7 @@ export const formFields = [
     name: 'from',
     header: 'What is your starting location?',
     detail: '',
+    next: 'to',
     input: {
       type: 'text',
       initialValue: '',
@@ -15,6 +16,7 @@ export const formFields = [
     name: 'to',
     header: 'What about destination?',
     detail: '',
+    next: 'adults',
     input: {
       type: 'text',
       initialValue: '',
@@ -27,6 +29,7 @@ export const formFields = [
     name: 'adults',
     header: 'How many adults are traveling?',
     detail: 'At least 1 and up to 9.',
+    next: 'children',
     input: {
       type: 'number',
       initialValue: 1,
@@ -39,6 +42,7 @@ export const formFields = [
     name: 'children',
     header: 'Any children?',
     detail: 'Pick up to 9.',
+    next: 'duration',
     input: {
       type: 'number',
       initialValue: 0,
@@ -51,6 +55,7 @@ export const formFields = [
     name: 'duration',
     header: 'How many days do you plan to travel?',
     detail: 'Choose between 3 and 30.',
+    next: 'budget',
     input: {
       type: 'number',
       initialValue: 3,
@@ -63,6 +68,7 @@ export const formFields = [
     name: 'budget',
     header: 'What is your budget?',
     detail: '',
+    next: 'season',
     input: {
       type: 'radio',
       initialValue: '',
@@ -108,6 +114,7 @@ export const formFields = [
     name: 'season',
     header: 'When are you planning to travel?',
     detail: '',
+    next: 'name',
     input: {
       type: 'radio',
       initialValue: '',
@@ -136,6 +143,7 @@ export const formFields = [
     name: 'name',
     header: 'Add your name',
     detail: '',
+    next: 'email',
     input: {
       type: 'text',
       initialValue: '',
@@ -149,6 +157,7 @@ export const formFields = [
     header: 'Stay in touch',
     detail:
       'Add your email to receive additional content about your destination.',
+    next: 'submit',
     input: {
       type: 'text',
       initialValue: '',
@@ -160,6 +169,7 @@ export const formFields = [
     name: 'submit',
     header: 'Ready to submit?',
     detail: '',
+    next: 'confirmation',
     input: {
       type: 'submit',
       initialValue: 'Go Ahead',
