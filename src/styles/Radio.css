@@ -11,7 +11,7 @@ input[type='radio']:checked + .Radio__card {
 .Radio__card {
   width: 24rem;
   height: auto;
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-light);
   text-align: center;
   text-transform: capitalize;
   margin: 1rem;

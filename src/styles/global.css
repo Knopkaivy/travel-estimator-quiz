@@ -3,6 +3,7 @@
   --color-primary: #fffcec;
   --color-teal-light: #56d1c2;
   --color-teal-dark: #37b8aa;
+  --color-secondary-light: #ffb569;
   --color-secondary: #ff7d00;
   --color-tertiary: #913212;
 }
@@ -26,7 +27,8 @@ body {
   background-color: var(--color-primary);
 }
 h1,
-h2 {
+h2,
+h3 {
   font-weight: 400;
 }
 p {

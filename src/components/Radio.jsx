@@ -3,7 +3,6 @@ import '../styles/Radio.css';
 
 const Radio = ({ option, name, radioSelect, val }) => {
   const handleRadioClick = (event) => {
-    console.log(event.target.id, option.id);
     radioSelect(event.target.id);
   };
   return (
