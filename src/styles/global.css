@@ -43,4 +43,5 @@ p {
   font-size: 1.6rem;
   text-align: start;
   margin-left: 1rem;
+  max-width: 24rem;
 }

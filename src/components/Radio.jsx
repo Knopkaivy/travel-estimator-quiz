@@ -14,7 +14,12 @@ const Radio = ({
     changeVal(event.target.id);
   };
   return (
-    <label htmlFor={option.id} key={option.id} className="Radio__label">
+    <label
+      tabIndex={0}
+      htmlFor={option.id}
+      key={option.id}
+      className="Radio__label"
+    >
       <input
         type="radio"
         name={name}
@@ -22,7 +27,10 @@ const Radio = ({
         value={option.id}
         checked={val === option.id}
         {...reg}
-        onChange={handleRadioClick}
+        onChange={(e) => {
+          reg.onChange(e);
+          handleRadioClick(e);
+        }}
       />
       <div className="Radio__card">
         <h3>{option.name}</h3>

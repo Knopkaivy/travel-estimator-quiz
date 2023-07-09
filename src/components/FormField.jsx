@@ -13,7 +13,14 @@ import Input from './Input';
 import RadioGroup from './RadioGroup';
 import '../styles/FormField.css';
 
-const FormField = ({ field, val, changeVal, register, errors }) => {
+const FormField = ({
+  field,
+  val,
+  changeVal,
+  register,
+  errors,
+  scrollToNext,
+}) => {
   const { name, header, detail, next, input } = field;
 
   return (
@@ -31,6 +38,7 @@ const FormField = ({ field, val, changeVal, register, errors }) => {
               changeVal={changeVal}
               register={register}
               errors={errors}
+              scrollToNext={scrollToNext}
             />
           ) : (
             <Input
@@ -41,6 +49,7 @@ const FormField = ({ field, val, changeVal, register, errors }) => {
               changeVal={changeVal}
               register={register}
               errors={errors}
+              scrollToNext={scrollToNext}
             />
           )}
         </div>

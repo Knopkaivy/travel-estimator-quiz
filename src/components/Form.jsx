@@ -14,7 +14,7 @@ import FormField from './FormField';
 import { formFields } from '../formFields';
 import '../styles/Form.css';
 
-const Form = () => {
+const Form = ({ scrollToNext }) => {
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [adults, setAdults] = useState('');
@@ -71,6 +71,7 @@ const Form = () => {
         changeVal={stateItem[1]}
         register={register}
         errors={errors}
+        scrollToNext={scrollToNext}
       />
     );
   });

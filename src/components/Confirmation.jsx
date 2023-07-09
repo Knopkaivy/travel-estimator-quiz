@@ -12,7 +12,7 @@ import {
 import Button from './Button';
 import '../styles/Confirmation.css';
 
-const Confirmation = () => {
+const Confirmation = ({ scrollToNext }) => {
   return (
     <Element name="confirmation" className="element">
       <div className="Confirmation">
@@ -22,7 +22,7 @@ const Confirmation = () => {
           cannot provide an accurate estimate. If you signed up for our new
           letter we will lwt you know when to try again.
         </p>
-        <Button val="another trip" next="from" />
+        <Button val="another trip" next="from" scrollToNext={scrollToNext} />
       </div>
     </Element>
   );

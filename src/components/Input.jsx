@@ -2,7 +2,16 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Input.css';
 import Button from './Button';
 
-const Input = ({ name, input, next, val, changeVal, register, errors }) => {
+const Input = ({
+  name,
+  input,
+  next,
+  val,
+  changeVal,
+  register,
+  errors,
+  scrollToNext,
+}) => {
   const { type, min, max, minLength, maxLength, validationParams } = input;
   const reg = register(name, { ...validationParams });
   const handleChange = (event) => {
@@ -11,12 +20,13 @@ const Input = ({ name, input, next, val, changeVal, register, errors }) => {
   return (
     <div className="Input">
       {type === 'submit' ? (
-        <input type={type} value="Go Ahead" className="Button" />
+        <input type={type} id={name} value="Go Ahead" className="Button" />
       ) : (
         <React.Fragment>
           <div>
             <input
               type={type}
+              id={name}
               min={min}
               max={max}
               minLength={minLength}
@@ -33,7 +43,13 @@ const Input = ({ name, input, next, val, changeVal, register, errors }) => {
               {errors[name] && errors[name].message}
             </p>
           </div>
-          <Button val="next" name={name} next={next} errors={errors} />
+          <Button
+            val="next"
+            name={name}
+            next={next}
+            errors={errors}
+            scrollToNext={scrollToNext}
+          />
         </React.Fragment>
       )}
     </div>

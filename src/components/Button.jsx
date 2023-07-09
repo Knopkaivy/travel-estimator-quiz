@@ -11,18 +11,20 @@ import {
 } from 'react-scroll';
 import '../styles/Button.css';
 
-const Button = ({ val, name, next, errors }) => {
-  const handleButtonClick = () => {
+const Button = ({ val, name, next, errors, scrollToNext }) => {
+  const handleButtonClick = (event) => {
+    console.log(event);
     if (val === 'next') {
-      if (errors[name]) return;
+      console.log(errors[name]);
+      if (errors[name]) {
+        if (name === 'budget' || name === 'season') return;
+        const newEl = document.querySelector(`#${name}`);
+        console.log('focusing on input');
+        newEl.focus();
+        return;
+      }
     }
-    // if (next && !errors[name]) {
-    scroller.scrollTo(next, {
-      duration: 1500,
-      delay: 100,
-      smooth: true,
-    });
-    // }
+    scrollToNext(next);
   };
   return (
     <button type="button" className="Button" onClick={handleButtonClick}>

@@ -12,7 +12,7 @@ import {
 import Button from './Button';
 import '../styles/Start.css';
 
-const Start = () => {
+const Start = ({ scrollToNext }) => {
   return (
     <Element name="start" className="element">
       <div className="Start">
@@ -21,7 +21,7 @@ const Start = () => {
           Get an estimate for your trip based on location, group size, duration
           and budget.
         </p>
-        <Button val="start" next="from" />
+        <Button val="start" next="from" scrollToNext={scrollToNext} />
       </div>
     </Element>
   );

@@ -16,13 +16,21 @@ import Confirmation from './components/Confirmation';
 import { useEffect } from 'react';
 
 function App() {
-  // const scrollToNext = (next) => {
-  //   scroller.scrollTo(next, {
-  //     duration: 1500,
-  //     delay: 100,
-  //     smooth: true,
-  //   });
-  // };
+  const scrollToNext = (next) => {
+    scroller.scrollTo(next, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+    });
+    setTimeout(() => {
+      const newEl = document.querySelector(`#${next}`);
+      if (next === 'budget' || next === 'season') {
+        newEl.firstChild.focus();
+      } else {
+        newEl.focus();
+      }
+    }, 1600);
+  };
   useEffect(() => {
     scroller.scrollTo('start', {
       duration: 1500,
@@ -32,9 +40,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Start />
-      <Form />
-      <Confirmation />
+      <Start scrollToNext={scrollToNext} />
+      <Form scrollToNext={scrollToNext} />
+      <Confirmation scrollToNext={scrollToNext} />
     </div>
   );
 }
