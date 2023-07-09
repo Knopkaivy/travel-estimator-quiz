@@ -3,32 +3,36 @@ import Button from './Button';
 import '../styles/RadioGroup.css';
 import Radio from './Radio';
 
-const RadioGroup = ({ input, name, next, reset }) => {
-  const { options } = input;
-  const [val, setVal] = useState('');
-  useEffect(() => {
-    if (reset) {
-      setVal('');
-    }
-  }, [reset]);
-  const radioSelect = (id) => {
-    setVal(id);
-  };
+const RadioGroup = ({
+  input,
+  name,
+  next,
+  val,
+  changeVal,
+  register,
+  errors,
+}) => {
+  const { options, validationParams } = input;
+
   const optionList = options.map((option) => {
     return (
       <Radio
         option={option}
         name={name}
-        radioSelect={radioSelect}
+        changeVal={changeVal}
         key={option.id}
         val={val}
+        register={register}
+        // errors={errors}
+        validationParams={validationParams}
       />
     );
   });
   return (
     <div className="RadioGroup">
       <div className="RadioGroup__optionsContainer">{optionList}</div>
-      <Button val="next" next={next} />
+      <p className="errorMessage">{errors[name] && errors[name].message}</p>
+      <Button val="next" name={name} next={next} errors={errors} />
     </div>
   );
 };

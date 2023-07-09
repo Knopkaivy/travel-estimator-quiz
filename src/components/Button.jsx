@@ -11,15 +11,18 @@ import {
 } from 'react-scroll';
 import '../styles/Button.css';
 
-const Button = ({ val, next }) => {
+const Button = ({ val, name, next, errors }) => {
   const handleButtonClick = () => {
-    if (next) {
-      scroller.scrollTo(next, {
-        duration: 1500,
-        delay: 100,
-        smooth: true,
-      });
+    if (val === 'next') {
+      if (errors[name]) return;
     }
+    // if (next && !errors[name]) {
+    scroller.scrollTo(next, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+    });
+    // }
   };
   return (
     <button type="button" className="Button" onClick={handleButtonClick}>

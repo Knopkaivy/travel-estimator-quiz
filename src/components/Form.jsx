@@ -9,24 +9,52 @@ import {
   scrollSpy,
   scroller,
 } from 'react-scroll';
+import { useForm } from 'react-hook-form';
 import FormField from './FormField';
 import { formFields } from '../formFields';
 import '../styles/Form.css';
 
 const Form = () => {
-  const [reset, setReset] = useState(false);
+  const [from, setFrom] = useState('');
+  const [to, setTo] = useState('');
+  const [adults, setAdults] = useState('');
+  const [children, setChildren] = useState('');
+  const [duration, setDuration] = useState('');
+  const [budget, setBudget] = useState('');
+  const [season, setSeason] = useState('');
+  const [submit, setSubmit] = useState('Go Ahead');
 
-  useEffect(() => {
-    if (reset) {
-      setTimeout(() => {
-        setReset(false);
-      }, 1000);
-    }
-  }, [reset]);
+  const stateArr = [
+    [from, setFrom],
+    [to, setTo],
+    [adults, setAdults],
+    [children, setChildren],
+    [duration, setDuration],
+    [budget, setBudget],
+    [season, setSeason],
+    [submit, setSubmit],
+  ];
 
-  const mySubmit = (event) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({ mode: 'onBlur' });
+
+  const resetFields = () => {
+    setFrom('');
+    setTo('');
+    setAdults('');
+    setChildren('');
+    setDuration('');
+    setBudget('');
+    setSeason('');
+  };
+
+  const mySubmit = (data, event) => {
+    console.log(data);
     event.preventDefault();
-    setReset(true);
+    resetFields();
     scroller.scrollTo('confirmation', {
       duration: 1500,
       delay: 100,
@@ -34,16 +62,20 @@ const Form = () => {
     });
   };
 
-  const formFieldsList = formFields.map((field, i) => {
-    return <FormField key={i} field={field} reset={reset} />;
+  const formFieldsList = stateArr.map((stateItem, i) => {
+    return (
+      <FormField
+        key={formFields[i].name}
+        val={stateItem[0]}
+        field={formFields[i]}
+        changeVal={stateItem[1]}
+        register={register}
+        errors={errors}
+      />
+    );
   });
   return (
-    <form
-      className="Form"
-      onSubmit={(e) => {
-        mySubmit(e);
-      }}
-    >
+    <form className="Form" onSubmit={handleSubmit(mySubmit)} noValidate>
       {formFieldsList}
     </form>
   );

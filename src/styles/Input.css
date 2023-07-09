@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 input[type='text'],
 input[type='number'] {

@@ -6,10 +6,19 @@ export const formFields = [
     next: 'to',
     input: {
       type: 'text',
-      initialValue: '',
-      isRequired: true,
       minLength: 3,
       maxLength: 20,
+      validationParams: {
+        required: 'Starting location is required',
+        minLength: {
+          value: 3,
+          message: 'Location name must be at least 3 characters long',
+        },
+        maxLength: {
+          value: 20,
+          message: 'Location name must be no more than 20 characters long',
+        },
+      },
     },
   },
   {
@@ -19,10 +28,19 @@ export const formFields = [
     next: 'adults',
     input: {
       type: 'text',
-      initialValue: '',
-      isRequired: true,
       minLength: 3,
       maxLength: 20,
+      validationParams: {
+        required: 'Destination location is required',
+        minLength: {
+          value: 3,
+          message: 'Location name must be at least 3 characters long',
+        },
+        maxLength: {
+          value: 20,
+          message: 'Location name must be no more than 20 characters long',
+        },
+      },
     },
   },
   {
@@ -32,10 +50,19 @@ export const formFields = [
     next: 'children',
     input: {
       type: 'number',
-      initialValue: 1,
-      isRequired: true,
       min: 1,
       max: 9,
+      validationParams: {
+        required: 'Pick value between 1 and 9',
+        min: {
+          value: 1,
+          message: 'There has to be at least 1 adult in the group',
+        },
+        max: {
+          value: 9,
+          message: 'No more than 9 adults at this time',
+        },
+      },
     },
   },
   {
@@ -45,10 +72,19 @@ export const formFields = [
     next: 'duration',
     input: {
       type: 'number',
-      initialValue: 0,
-      isRequired: false,
       min: 0,
       max: 9,
+      validationParams: {
+        required: 'Pick value between 0 and 9',
+        min: {
+          value: 0,
+          message: 'Pick value between 0 and 9',
+        },
+        max: {
+          value: 9,
+          message: 'No more than 9 children at this time',
+        },
+      },
     },
   },
   {
@@ -58,10 +94,19 @@ export const formFields = [
     next: 'budget',
     input: {
       type: 'number',
-      initialValue: 3,
-      isRequired: true,
       min: 3,
       max: 30,
+      validationParams: {
+        required: 'Pick value between 3 and 30',
+        min: {
+          value: 3,
+          message: 'Please allow at least 3 day for your travel',
+        },
+        max: {
+          value: 9,
+          message: 'No more than 30 day estimates at this time',
+        },
+      },
     },
   },
   {
@@ -71,8 +116,9 @@ export const formFields = [
     next: 'season',
     input: {
       type: 'radio',
-      initialValue: '',
-      isRequired: true,
+      validationParams: {
+        required: 'Please select best matching option',
+      },
       options: [
         {
           name: 'modest',
@@ -114,11 +160,12 @@ export const formFields = [
     name: 'season',
     header: 'When are you planning to travel?',
     detail: '',
-    next: 'name',
+    next: 'submit',
     input: {
       type: 'radio',
-      initialValue: '',
-      isRequired: true,
+      validationParams: {
+        required: 'Please select best matching option',
+      },
       options: [
         {
           name: 'best season',
@@ -139,32 +186,7 @@ export const formFields = [
       ],
     },
   },
-  {
-    name: 'name',
-    header: 'Add your name',
-    detail: '',
-    next: 'email',
-    input: {
-      type: 'text',
-      initialValue: '',
-      isRequired: false,
-      minLength: 1,
-      maxLength: 20,
-    },
-  },
-  {
-    name: 'email',
-    header: 'Stay in touch',
-    detail:
-      'Add your email to receive additional content about your destination.',
-    next: 'submit',
-    input: {
-      type: 'text',
-      initialValue: '',
-      isRequired: false,
-      pattern: '',
-    },
-  },
+
   {
     name: 'submit',
     header: 'Ready to submit?',
@@ -172,7 +194,6 @@ export const formFields = [
     next: 'confirmation',
     input: {
       type: 'submit',
-      initialValue: 'Go Ahead',
     },
   },
 ];

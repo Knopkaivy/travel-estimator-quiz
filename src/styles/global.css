@@ -36,3 +36,11 @@ p {
   max-width: 80rem;
   text-align: center;
 }
+.errorMessage {
+  color: var(--color-secondary);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-align: start;
+  margin-left: 1rem;
+}

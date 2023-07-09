@@ -1,9 +1,17 @@
 import React from 'react';
 import '../styles/Radio.css';
 
-const Radio = ({ option, name, radioSelect, val }) => {
+const Radio = ({
+  option,
+  name,
+  changeVal,
+  val,
+  register,
+  validationParams,
+}) => {
+  const reg = register(name, { ...validationParams });
   const handleRadioClick = (event) => {
-    radioSelect(event.target.id);
+    changeVal(event.target.id);
   };
   return (
     <label htmlFor={option.id} key={option.id} className="Radio__label">
@@ -13,7 +21,8 @@ const Radio = ({ option, name, radioSelect, val }) => {
         id={option.id}
         value={option.id}
         checked={val === option.id}
-        onChange={(e) => handleRadioClick(e)}
+        {...reg}
+        onChange={handleRadioClick}
       />
       <div className="Radio__card">
         <h3>{option.name}</h3>
