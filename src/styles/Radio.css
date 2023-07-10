@@ -27,3 +27,6 @@ input[type='radio']:checked + .Radio__card {
 .Radio__card:active {
   transform: translateY(1rem);
 }
+.Radio__card:focus {
+  color: var(--color-primary);
+}

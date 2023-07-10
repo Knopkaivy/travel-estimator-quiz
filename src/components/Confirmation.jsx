@@ -22,7 +22,7 @@ const Confirmation = ({ scrollToNext }) => {
           cannot provide an accurate estimate. If you signed up for our new
           letter we will lwt you know when to try again.
         </p>
-        <Button val="another trip" next="from" scrollToNext={scrollToNext} />
+        <Button btnVal="another trip" next="from" scrollToNext={scrollToNext} />
       </div>
     </Element>
   );

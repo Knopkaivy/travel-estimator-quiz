@@ -22,3 +22,7 @@
 .Button:active {
   transform: translateY(0.5rem);
 }
+.Button:disabled {
+  background-color: var(--color-disabled);
+  cursor: default;
+}

@@ -36,11 +36,12 @@ const RadioGroup = ({
       </div>
       <p className="errorMessage">{errors[name] && errors[name].message}</p>
       <Button
-        val="next"
+        btnVal="next"
         name={name}
         next={next}
         errors={errors}
         scrollToNext={scrollToNext}
+        val={val}
       />
     </div>
   );

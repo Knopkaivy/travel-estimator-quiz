@@ -21,7 +21,7 @@ const Start = ({ scrollToNext }) => {
           Get an estimate for your trip based on location, group size, duration
           and budget.
         </p>
-        <Button val="start" next="from" scrollToNext={scrollToNext} />
+        <Button btnVal="start" next="from" scrollToNext={scrollToNext} />
       </div>
     </Element>
   );

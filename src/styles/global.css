@@ -6,6 +6,7 @@
   --color-secondary-light: #ffb569;
   --color-secondary: #ff7d00;
   --color-tertiary: #913212;
+  --color-disabled: #ffe9d2;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -37,11 +38,14 @@ p {
   text-align: center;
 }
 .errorMessage {
+  min-height: 2rem;
+  line-height: 1.6rem;
   color: var(--color-secondary);
   font-style: italic;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-align: start;
   margin-left: 1rem;
+  margin-top: 4px;
   max-width: 24rem;
 }

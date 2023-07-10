@@ -17,6 +17,14 @@ const Input = ({
   const handleChange = (event) => {
     changeVal(event.target.value);
   };
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const el = document.querySelector(`#${name}`);
+      el.blur();
+    }
+  };
+
   return (
     <div className="Input">
       {type === 'submit' ? (
@@ -37,6 +45,9 @@ const Input = ({
                 reg.onChange(e);
                 handleChange(e);
               }}
+              onKeyDown={(e) => {
+                handleKeyDown(e);
+              }}
               errors={errors}
             />
             <p className="errorMessage">
@@ -44,11 +55,12 @@ const Input = ({
             </p>
           </div>
           <Button
-            val="next"
+            btnVal="next"
             name={name}
             next={next}
             errors={errors}
             scrollToNext={scrollToNext}
+            val={val}
           />
         </React.Fragment>
       )}

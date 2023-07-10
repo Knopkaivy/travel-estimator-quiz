@@ -11,15 +11,12 @@ import {
 } from 'react-scroll';
 import '../styles/Button.css';
 
-const Button = ({ val, name, next, errors, scrollToNext }) => {
+const Button = ({ btnVal, name, next, errors, scrollToNext, val }) => {
   const handleButtonClick = (event) => {
-    console.log(event);
-    if (val === 'next') {
-      console.log(errors[name]);
+    if (btnVal === 'next') {
       if (errors[name]) {
         if (name === 'budget' || name === 'season') return;
         const newEl = document.querySelector(`#${name}`);
-        console.log('focusing on input');
         newEl.focus();
         return;
       }
@@ -27,8 +24,13 @@ const Button = ({ val, name, next, errors, scrollToNext }) => {
     scrollToNext(next);
   };
   return (
-    <button type="button" className="Button" onClick={handleButtonClick}>
-      {val}
+    <button
+      type="button"
+      className="Button"
+      onClick={handleButtonClick}
+      disabled={val === ''}
+    >
+      {btnVal}
     </button>
   );
 };
