@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import Form from './components/Form';
 import * as Scroll from 'react-scroll';
 import {
@@ -13,7 +14,6 @@ import './styles/global.css';
 import './styles/App.css';
 import Start from './components/Start';
 import Confirmation from './components/Confirmation';
-import { useEffect } from 'react';
 
 function App() {
   const scrollToNext = (next) => {
