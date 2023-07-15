@@ -9,6 +9,7 @@ const SearchInput = ({
   name,
   type,
   val,
+  changeVal,
   errors,
   register,
   validationParams,
@@ -35,17 +36,24 @@ const SearchInput = ({
       },
     ],
   };
+  const handleOptionClick = (event) => {
+    changeVal(event.target.innerText);
+  };
   const results = useFuse(val, airports, options);
   const airportList = results.slice(0, 4).map((airport) => {
     const { iata, city, country } = airport;
     return (
-      <div key={iata}>
+      <li
+        className="SearchInput__option"
+        key={iata}
+        onClick={(e) => handleOptionClick(e)}
+      >
         {iata} - {city} - {country}
-      </div>
+      </li>
     );
   });
   return (
-    <div>
+    <div className="SearchInput">
       <input
         type={type}
         value={val}
@@ -60,7 +68,7 @@ const SearchInput = ({
           handleKeyDown(e);
         }}
       />
-      {airportList}
+      <ul className="SearchInput__optionsContainer">{airportList}</ul>
     </div>
   );
 };

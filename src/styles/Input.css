@@ -19,7 +19,13 @@ input[type='number'] {
   box-sizing: border-box;
   margin: 0 1rem;
 }
+input[type='search'] {
+  width: 40rem;
+}
 input:active,
 input:focus {
   border: 2px solid var(--color-tertiary);
+}
+input[type='submit']:focus {
+  border: none;
 }

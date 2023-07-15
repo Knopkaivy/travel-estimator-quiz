@@ -41,6 +41,7 @@ const Input = ({
                 name={name}
                 type={type}
                 val={val}
+                changeVal={changeVal}
                 errors={errors}
                 register={register}
                 validationParams={validationParams}

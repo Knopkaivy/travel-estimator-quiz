@@ -15,7 +15,7 @@ export const formFields = [
           message: 'Location name must be at least 3 characters long',
         },
         maxLength: {
-          value: 20,
+          value: 100,
           message: 'Location name must be no more than 20 characters long',
         },
       },
@@ -37,7 +37,7 @@ export const formFields = [
           message: 'Location name must be at least 3 characters long',
         },
         maxLength: {
-          value: 20,
+          value: 100,
           message: 'Location name must be no more than 20 characters long',
         },
       },
