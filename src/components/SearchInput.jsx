@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Fuse from 'fuse.js';
+import { useFuse } from '../useFuse';
 import airports from '../airports.json';
+
 import '../styles/SearchInput.css';
 
 const SearchInput = ({
@@ -33,10 +35,8 @@ const SearchInput = ({
       },
     ],
   };
-  const fuse = new Fuse(airports, options);
-  const results = fuse.search('Portland');
-  const resultsList = results.map((res) => res.item);
-  const airportList = resultsList.map((airport) => {
+  const results = useFuse(val, airports, options);
+  const airportList = results.slice(0, 4).map((airport) => {
     const { iata, city, country } = airport;
     return (
       <div key={iata}>
