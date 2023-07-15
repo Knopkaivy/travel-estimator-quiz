@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Input.css';
+import Fuse from 'fuse.js';
 import Button from './Button';
+import airports from '../airports.json';
+import '../styles/Input.css';
+import SearchInput from './SearchInput';
 
 const Input = ({
   name,
@@ -14,6 +17,7 @@ const Input = ({
 }) => {
   const { type, min, max, minLength, maxLength, validationParams } = input;
   const reg = register(name, { ...validationParams });
+
   const handleChange = (event) => {
     changeVal(event.target.value);
   };
@@ -32,24 +36,37 @@ const Input = ({
       ) : (
         <React.Fragment>
           <div>
-            <input
-              type={type}
-              id={name}
-              min={min}
-              max={max}
-              minLength={minLength}
-              maxLength={maxLength}
-              value={val}
-              {...reg}
-              onChange={(e) => {
-                reg.onChange(e);
-                handleChange(e);
-              }}
-              onKeyDown={(e) => {
-                handleKeyDown(e);
-              }}
-              errors={errors}
-            />
+            {type === 'search' ? (
+              <SearchInput
+                name={name}
+                type={type}
+                val={val}
+                errors={errors}
+                register={register}
+                validationParams={validationParams}
+                handleChange={handleChange}
+                handleKeyDown={handleKeyDown}
+              />
+            ) : (
+              <input
+                type={type}
+                id={name}
+                min={min}
+                max={max}
+                minLength={minLength}
+                maxLength={maxLength}
+                value={val}
+                {...reg}
+                onChange={(e) => {
+                  reg.onChange(e);
+                  handleChange(e);
+                }}
+                onKeyDown={(e) => {
+                  handleKeyDown(e);
+                }}
+                errors={errors}
+              />
+            )}
             <p className="errorMessage">
               {errors[name] && errors[name].message}
             </p>

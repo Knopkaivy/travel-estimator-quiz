@@ -5,6 +5,7 @@
   align-items: start;
 }
 input[type='text'],
+input[type='search'],
 input[type='number'] {
   width: 24rem;
   height: 4rem;

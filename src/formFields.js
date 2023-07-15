@@ -5,7 +5,7 @@ export const formFields = [
     detail: '',
     next: 'to',
     input: {
-      type: 'text',
+      type: 'search',
       minLength: 3,
       maxLength: 20,
       validationParams: {
@@ -27,7 +27,7 @@ export const formFields = [
     detail: '',
     next: 'adults',
     input: {
-      type: 'text',
+      type: 'search',
       minLength: 3,
       maxLength: 20,
       validationParams: {
