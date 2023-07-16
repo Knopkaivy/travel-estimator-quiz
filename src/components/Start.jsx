@@ -1,14 +1,5 @@
 import React from 'react';
-import * as Scroll from 'react-scroll';
-import {
-  Link,
-  // Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from 'react-scroll';
+import { Element } from 'react-scroll';
 import Button from './Button';
 import '../styles/Start.css';
 

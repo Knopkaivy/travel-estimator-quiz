@@ -1,13 +1,11 @@
 .FormField {
   width: 100vw;
   height: 100vh;
-  /* border: 2px solid fuchsia; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .FormField__contentContainer {
-  /* border: 2px solid orangered; */
   width: 100%;
   max-width: 80rem;
   font-size: 2rem;

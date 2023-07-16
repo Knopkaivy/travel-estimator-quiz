@@ -1,15 +1,6 @@
 import React, { useEffect } from 'react';
 import Form from './components/Form';
-import * as Scroll from 'react-scroll';
-import {
-  Link,
-  // Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from 'react-scroll';
+import { scroller } from 'react-scroll';
 import './styles/global.css';
 import './styles/App.css';
 import Start from './components/Start';

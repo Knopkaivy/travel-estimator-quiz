@@ -1,14 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import * as Scroll from 'react-scroll';
-import {
-  Link,
-  // Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from 'react-scroll';
+import React, { useState } from 'react';
+import { scroller } from 'react-scroll';
 import { useForm } from 'react-hook-form';
 import FormField from './FormField';
 import { formFields } from '../formFields';
@@ -52,7 +43,6 @@ const Form = ({ scrollToNext }) => {
   };
 
   const mySubmit = (data, event) => {
-    console.log(data);
     event.preventDefault();
     resetFields();
     scroller.scrollTo('confirmation', {

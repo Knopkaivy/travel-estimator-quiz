@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Button from './Button';
 import '../styles/RadioGroup.css';
 import Radio from './Radio';

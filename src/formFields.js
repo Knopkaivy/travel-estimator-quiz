@@ -7,7 +7,7 @@ export const formFields = [
     input: {
       type: 'search',
       minLength: 3,
-      maxLength: 20,
+      maxLength: 100,
       validationParams: {
         required: 'Starting location is required',
         minLength: {
@@ -29,7 +29,7 @@ export const formFields = [
     input: {
       type: 'search',
       minLength: 3,
-      maxLength: 20,
+      maxLength: 100,
       validationParams: {
         required: 'Destination location is required',
         minLength: {
@@ -103,7 +103,7 @@ export const formFields = [
           message: 'Please allow at least 3 day for your travel',
         },
         max: {
-          value: 9,
+          value: 30,
           message: 'No more than 30 day estimates at this time',
         },
       },

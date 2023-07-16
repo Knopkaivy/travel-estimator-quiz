@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Fuse from 'fuse.js';
+import React from 'react';
 import Button from './Button';
-import airports from '../airports.json';
-import '../styles/Input.css';
 import SearchInput from './SearchInput';
+import '../styles/Input.css';
 
 const Input = ({
   name,

@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Fuse from 'fuse.js';
+import React from 'react';
 import { useFuse } from '../useFuse';
 import airports from '../airports.json';
 
@@ -40,12 +39,12 @@ const SearchInput = ({
     changeVal(event.target.innerText);
   };
   const results = useFuse(val, airports, options);
-  const airportList = results.slice(0, 4).map((airport) => {
+  const airportList = results.slice(0, 4).map((airport, i) => {
     const { iata, city, country } = airport;
     return (
       <li
         className="SearchInput__option"
-        key={iata}
+        key={i}
         onClick={(e) => handleOptionClick(e)}
       >
         {iata} - {city} - {country}
