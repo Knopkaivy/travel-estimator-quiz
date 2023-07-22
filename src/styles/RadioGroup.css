@@ -8,3 +8,9 @@
 .RadioGroup__optionsContainer {
   display: flex;
 }
+
+@media only screen and (max-width: 768px) {
+  .RadioGroup__optionsContainer {
+    flex-direction: column;
+  }
+}

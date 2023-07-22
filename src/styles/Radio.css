@@ -27,3 +27,19 @@ input[type='radio']:checked + .Radio__card {
 .Radio__card:focus {
   color: var(--color-primary);
 }
+@media only screen and (max-width: 992px) {
+  .Radio__card {
+    width: 20rem;
+    padding: 0.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Radio__card {
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .Radio__card {
+    width: 80vw;
+  }
+}

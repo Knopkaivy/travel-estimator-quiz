@@ -24,3 +24,9 @@
   background-color: var(--color-disabled);
   cursor: default;
 }
+
+@media only screen and (max-width: 576px) {
+  .Button {
+    width: 80vw;
+  }
+}

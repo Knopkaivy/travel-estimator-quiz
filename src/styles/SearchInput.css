@@ -20,3 +20,9 @@
   background-color: var(--color-tertiary);
   color: var(--color-primary);
 }
+
+@media only screen and (max-width: 768px) {
+  .SearchInput__option {
+    background-color: var(--color-primary);
+  }
+}
