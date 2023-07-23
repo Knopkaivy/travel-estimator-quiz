@@ -3,16 +3,7 @@ import Button from './Button';
 import SearchInput from './SearchInput';
 import '../styles/Input.css';
 
-const Input = ({
-  name,
-  input,
-  next,
-  val,
-  changeVal,
-  register,
-  errors,
-  scrollToNext,
-}) => {
+const Input = ({ name, input, next, val, changeVal, register, errors }) => {
   const { type, min, max, minLength, maxLength, validationParams } = input;
   const reg = register(name, { ...validationParams });
 
@@ -75,7 +66,6 @@ const Input = ({
             name={name}
             next={next}
             errors={errors}
-            scrollToNext={scrollToNext}
             val={val}
           />
         </React.Fragment>

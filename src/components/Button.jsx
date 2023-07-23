@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../context';
 import '../styles/Button.css';
 
-const Button = ({ btnVal, name, next, errors, scrollToNext, val }) => {
+const Button = ({ btnVal, name, next, errors, val }) => {
+  const scrll = useContext(Context);
   const handleButtonClick = () => {
     if (btnVal === 'next') {
       if (errors[name]) {
@@ -11,7 +13,7 @@ const Button = ({ btnVal, name, next, errors, scrollToNext, val }) => {
         return;
       }
     }
-    scrollToNext(next);
+    scrll(next);
   };
   return (
     <button

@@ -3,7 +3,7 @@ import { Element } from 'react-scroll';
 import Button from './Button';
 import '../styles/Start.css';
 
-const Start = ({ scrollToNext }) => {
+const Start = () => {
   return (
     <Element name="start" className="element">
       <div className="Start">
@@ -12,7 +12,7 @@ const Start = ({ scrollToNext }) => {
           Get an estimate for your trip based on location, group size, duration
           and budget.
         </p>
-        <Button btnVal="start" next="from" scrollToNext={scrollToNext} />
+        <Button btnVal="start" next="from" />
       </div>
     </Element>
   );

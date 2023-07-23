@@ -3,7 +3,7 @@ import { Element } from 'react-scroll';
 import Button from './Button';
 import '../styles/Confirmation.css';
 
-const Confirmation = ({ scrollToNext }) => {
+const Confirmation = () => {
   return (
     <Element name="confirmation" className="element">
       <div className="Confirmation">
@@ -13,7 +13,7 @@ const Confirmation = ({ scrollToNext }) => {
           cannot provide an accurate estimate. If you signed up for our new
           letter we will lwt you know when to try again.
         </p>
-        <Button btnVal="another trip" next="from" scrollToNext={scrollToNext} />
+        <Button btnVal="another trip" next="from" />
       </div>
     </Element>
   );

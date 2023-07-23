@@ -11,7 +11,6 @@ const RadioGroup = ({
   changeVal,
   register,
   errors,
-  scrollToNext,
 }) => {
   const { options, validationParams } = input;
 
@@ -24,7 +23,6 @@ const RadioGroup = ({
         key={option.id}
         val={val}
         register={register}
-        // errors={errors}
         validationParams={validationParams}
       />
     );
@@ -35,14 +33,7 @@ const RadioGroup = ({
         {optionList}
       </div>
       <p className="errorMessage">{errors[name] && errors[name].message}</p>
-      <Button
-        btnVal="next"
-        name={name}
-        next={next}
-        errors={errors}
-        scrollToNext={scrollToNext}
-        val={val}
-      />
+      <Button btnVal="next" name={name} next={next} errors={errors} val={val} />
     </div>
   );
 };

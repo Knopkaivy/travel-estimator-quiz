@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
+import { Context } from './context';
 import Form from './components/Form';
 import { scroller } from 'react-scroll';
-import './styles/global.css';
-import './styles/App.css';
 import Start from './components/Start';
 import Confirmation from './components/Confirmation';
+import './styles/global.css';
+import './styles/App.css';
 
 function App() {
-  const scrollToNext = (next) => {
+  const scrollToNext = useCallback((next) => {
     scroller.scrollTo(next, {
       duration: 1500,
       delay: 100,
@@ -21,7 +22,10 @@ function App() {
         newEl.focus();
       }
     }, 1600);
-  };
+  }, []);
+
+  const contextValue = useMemo(() => scrollToNext, [scrollToNext]);
+
   useEffect(() => {
     scroller.scrollTo('start', {
       duration: 1500,
@@ -30,11 +34,13 @@ function App() {
     });
   }, []);
   return (
-    <div className="App">
-      <Start scrollToNext={scrollToNext} />
-      <Form scrollToNext={scrollToNext} />
-      <Confirmation scrollToNext={scrollToNext} />
-    </div>
+    <Context.Provider value={contextValue}>
+      <div className="App">
+        <Start scrollToNext={scrollToNext} />
+        <Form scrollToNext={scrollToNext} />
+        <Confirmation scrollToNext={scrollToNext} />
+      </div>
+    </Context.Provider>
   );
 }
 
