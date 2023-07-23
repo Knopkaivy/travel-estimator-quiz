@@ -36,7 +36,15 @@ const SearchInput = ({
     ],
   };
   const handleOptionClick = (event) => {
-    handleChange(name, event.target.innerText);
+    // manual onChange call to update react-hook-form data
+    const inputElement = document.getElementById(name);
+    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+      window.HTMLInputElement.prototype,
+      'value'
+    ).set;
+    nativeInputValueSetter.call(inputElement, event.target.innerText);
+    const manualEvent = new Event('input', { bubbles: true });
+    inputElement.dispatchEvent(manualEvent);
   };
   const results = useFuse(val, airports, options);
   const airportList = results.slice(0, 4).map((airport, i) => {

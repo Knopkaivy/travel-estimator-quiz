@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { scroller } from 'react-scroll';
 import { useForm } from 'react-hook-form';
 import useFormState from '../useFormState';
