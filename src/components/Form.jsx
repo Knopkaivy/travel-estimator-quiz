@@ -31,7 +31,6 @@ const Form = () => {
 
   const mySubmit = (data, event) => {
     event.preventDefault();
-    console.log(data);
     resetFields();
     scroller.scrollTo('confirmation', {
       duration: 1500,
