@@ -11,7 +11,7 @@ const Radio = ({
 }) => {
   const reg = register(name, { ...validationParams });
   const handleRadioClick = (event) => {
-    changeVal(event.target.id);
+    changeVal(name, event.target.id);
   };
   return (
     <label

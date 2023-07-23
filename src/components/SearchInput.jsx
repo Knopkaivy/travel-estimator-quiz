@@ -36,7 +36,7 @@ const SearchInput = ({
     ],
   };
   const handleOptionClick = (event) => {
-    changeVal(event.target.innerText);
+    handleChange(name, event.target.innerText);
   };
   const results = useFuse(val, airports, options);
   const airportList = results.slice(0, 4).map((airport, i) => {
@@ -61,7 +61,7 @@ const SearchInput = ({
         errors={errors}
         onChange={(e) => {
           reg.onChange(e);
-          handleChange(e);
+          handleChange(name, e.target.value);
         }}
         onKeyDown={(e) => {
           handleKeyDown(e);

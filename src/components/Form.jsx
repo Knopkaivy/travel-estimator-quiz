@@ -1,30 +1,23 @@
 import React, { useState } from 'react';
 import { scroller } from 'react-scroll';
 import { useForm } from 'react-hook-form';
+import useFormState from '../useFormState';
 import FormField from './FormField';
 import { formFields } from '../formFields';
 import '../styles/Form.css';
 
 const Form = () => {
-  const [from, setFrom] = useState('');
-  const [to, setTo] = useState('');
-  const [adults, setAdults] = useState('');
-  const [children, setChildren] = useState('');
-  const [duration, setDuration] = useState('');
-  const [budget, setBudget] = useState('');
-  const [season, setSeason] = useState('');
-  const [submit, setSubmit] = useState('Go Ahead');
-
-  const stateArr = [
-    [from, setFrom],
-    [to, setTo],
-    [adults, setAdults],
-    [children, setChildren],
-    [duration, setDuration],
-    [budget, setBudget],
-    [season, setSeason],
-    [submit, setSubmit],
-  ];
+  const initialState = {
+    from: '',
+    to: '',
+    adults: '',
+    children: '',
+    duration: '',
+    budget: '',
+    season: '',
+    submit: 'Go Ahead',
+  };
+  const { inputs, handleChange, handleReset } = useFormState(initialState);
 
   const {
     register,
@@ -33,17 +26,12 @@ const Form = () => {
   } = useForm({ mode: 'onBlur' });
 
   const resetFields = () => {
-    setFrom('');
-    setTo('');
-    setAdults('');
-    setChildren('');
-    setDuration('');
-    setBudget('');
-    setSeason('');
+    handleReset(initialState);
   };
 
   const mySubmit = (data, event) => {
     event.preventDefault();
+    console.log(data);
     resetFields();
     scroller.scrollTo('confirmation', {
       duration: 1500,
@@ -52,13 +40,13 @@ const Form = () => {
     });
   };
 
-  const formFieldsList = stateArr.map((stateItem, i) => {
+  const formFieldsList = formFields.map((item, i) => {
     return (
       <FormField
-        key={formFields[i].name}
-        val={stateItem[0]}
-        field={formFields[i]}
-        changeVal={stateItem[1]}
+        key={item.name}
+        val={inputs[item.name]}
+        field={item}
+        changeVal={handleChange}
         register={register}
         errors={errors}
       />

@@ -7,8 +7,8 @@ const Input = ({ name, input, next, val, changeVal, register, errors }) => {
   const { type, min, max, minLength, maxLength, validationParams } = input;
   const reg = register(name, { ...validationParams });
 
-  const handleChange = (event) => {
-    changeVal(event.target.value);
+  const handleChange = (name, value) => {
+    changeVal(name, value);
   };
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
@@ -49,7 +49,7 @@ const Input = ({ name, input, next, val, changeVal, register, errors }) => {
                 {...reg}
                 onChange={(e) => {
                   reg.onChange(e);
-                  handleChange(e);
+                  handleChange(name, e.target.value);
                 }}
                 onKeyDown={(e) => {
                   handleKeyDown(e);
