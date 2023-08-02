@@ -7,9 +7,13 @@
   --color-secondary: #ff7d00;
   --color-tertiary: #913212;
   --color-disabled: #ffe9d2;
+  --color-blue: #1ecbe1;
 }
 ::-webkit-scrollbar {
   display: none;
+}
+*:focus {
+  outline: 4px solid var(--color-blue);
 }
 *::before,
 *::after {

@@ -21,6 +21,7 @@ const Button = ({ btnVal, name, next, errors, val }) => {
       className="Button"
       onClick={handleButtonClick}
       disabled={val === ''}
+      aria-disabled={val === ''}
     >
       {btnVal}
     </button>

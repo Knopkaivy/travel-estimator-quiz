@@ -2,7 +2,7 @@ export const formFields = [
   {
     name: 'from',
     header: 'What is your starting location?',
-    detail: '',
+    detail: 'Enter 3 to 20 characters',
     next: 'to',
     input: {
       type: 'search',
@@ -24,7 +24,7 @@ export const formFields = [
   {
     name: 'to',
     header: 'What about destination?',
-    detail: '',
+    detail: 'Enter 3 to 20 characters',
     next: 'adults',
     input: {
       type: 'search',
@@ -112,7 +112,7 @@ export const formFields = [
   {
     name: 'budget',
     header: 'What is your budget?',
-    detail: '',
+    detail: 'Pick one option',
     next: 'season',
     input: {
       type: 'radio',
@@ -159,7 +159,7 @@ export const formFields = [
   {
     name: 'season',
     header: 'When are you planning to travel?',
-    detail: '',
+    detail: 'Pick one option',
     next: 'submit',
     input: {
       type: 'radio',

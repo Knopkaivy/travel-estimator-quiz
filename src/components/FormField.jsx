@@ -11,11 +11,13 @@ const FormField = ({ field, val, changeVal, register, errors }) => {
     <Element name={name} className="element">
       <div className="FormField">
         <div className="FormField__contentContainer">
-          <h2>{header}</h2>
-          {detail && <p>{detail}</p>}
+          <h2 aria-hidden="true">{header}</h2>
+          {detail && <p aria-hidden="true">{detail}</p>}
           {input.type === 'radio' ? (
             <RadioGroup
               input={input}
+              header={header}
+              detail={detail}
               name={name}
               next={next}
               val={val}
@@ -26,6 +28,8 @@ const FormField = ({ field, val, changeVal, register, errors }) => {
           ) : (
             <Input
               name={name}
+              header={header}
+              detail={detail}
               input={input}
               next={next}
               val={val}

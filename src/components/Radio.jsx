@@ -4,6 +4,7 @@ import '../styles/Radio.css';
 const Radio = ({
   option,
   name,
+
   changeVal,
   val,
   register,
@@ -13,12 +14,30 @@ const Radio = ({
   const handleRadioClick = (event) => {
     changeVal(name, event.target.id);
   };
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 32) {
+      event.preventDefault();
+      const el = document.getElementById(event.target.htmlFor);
+      // el.checked = !el.checked;
+      changeVal(name, event.target.htmlFor);
+      // manual onChange call to update react-hook-form data
+      // const inputElement = document.getElementById(name);
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value'
+      ).set;
+      nativeInputValueSetter.call(el, !el.checked);
+      const manualEvent = new Event('input', { bubbles: true });
+      el.dispatchEvent(manualEvent);
+    }
+  };
   return (
     <label
       tabIndex={0}
       htmlFor={option.id}
       key={option.id}
       className="Radio__label"
+      onKeyDown={(e) => handleKeyDown(e)}
     >
       <input
         type="radio"
@@ -32,9 +51,7 @@ const Radio = ({
           handleRadioClick(e);
         }}
       />
-      <div className="Radio__card">
-        <h3>{option.name}</h3>
-      </div>
+      <div className="Radio__card">{option.name}</div>
     </label>
   );
 };

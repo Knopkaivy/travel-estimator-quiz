@@ -6,6 +6,8 @@ import Radio from './Radio';
 const RadioGroup = ({
   input,
   name,
+  header,
+  detail,
   next,
   val,
   changeVal,
@@ -28,13 +30,17 @@ const RadioGroup = ({
     );
   });
   return (
-    <div className="RadioGroup">
+    <fieldset
+      className="RadioGroup"
+      aria-label={`${header} ${detail}`}
+      tabIndex={0}
+    >
       <div className="RadioGroup__optionsContainer" id={name}>
         {optionList}
       </div>
       <p className="errorMessage">{errors[name] && errors[name].message}</p>
       <Button btnVal="next" name={name} next={next} errors={errors} val={val} />
-    </div>
+    </fieldset>
   );
 };
 

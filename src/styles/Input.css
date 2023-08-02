@@ -24,7 +24,8 @@ input[type='search'] {
 }
 input:active,
 input:focus {
-  border: 2px solid var(--color-tertiary);
+  /* border: 2px solid var(--color-tertiary); */
+  outline: 4px solid var(--color-blue);
 }
 input[type='submit']:focus {
   border: none;
