@@ -20,6 +20,7 @@ const Radio = ({
       const el = document.getElementById(event.target.htmlFor);
       // el.checked = !el.checked;
       changeVal(name, event.target.htmlFor);
+      // ! ******THIS IS NOT WORKING YET ******
       // manual onChange call to update react-hook-form data
       // const inputElement = document.getElementById(name);
       const nativeInputValueSetter = Object.getOwnPropertyDescriptor(

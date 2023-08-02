@@ -46,6 +46,12 @@ const SearchInput = ({
     const manualEvent = new Event('input', { bubbles: true });
     inputElement.dispatchEvent(manualEvent);
   };
+  const handleOptionKeyUp = (event) => {
+    if (event.keyCode === 32) {
+      event.preventDefault();
+      handleOptionClick(event);
+    }
+  };
   const results = useFuse(val, airports, options);
   const airportList = results.slice(0, 4).map((airport, i) => {
     const { iata, city, country } = airport;
@@ -54,6 +60,8 @@ const SearchInput = ({
         className="SearchInput__option"
         key={i}
         onClick={(e) => handleOptionClick(e)}
+        onKeyUp={(e) => handleOptionKeyUp(e)}
+        tabIndex={0}
       >
         {iata} - {city} - {country}
       </li>
